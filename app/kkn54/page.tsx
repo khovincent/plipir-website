@@ -24,8 +24,8 @@ export default function KKN54() {
           <li>Pengenalan instagram</li>
           <li>Pengenalan AI</li>
           <li>Edukasi anak-anak tentang mengetik</li>
-          <li>Pengeceka kesehatan</li>
-          <li>Oembuatan mapping dusun</li>
+          <li>Pengecekan kesehatan</li>
+          <li>Pembuatan mapping dusun</li>
         </ul>
         <p>
           Semua kegiatan dilakukan dengan semangat kolaborasi bersama warga dusun, perangkat desa, dan pihak terkait lainnya.
