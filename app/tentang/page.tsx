@@ -16,6 +16,9 @@ export default function Tentang() {
           Selain keindahan alam, Dusun Plipir juga memiliki kekayaan tradisi lokal seperti upacara adat, pertanian organik, dan kegiatan gotong royong yang
           masih dilestarikan hingga saat ini. Ini menjadikan Plipir sebagai tempat yang ideal untuk mengenal kearifan lokal Yogyakarta.
         </p>
+        <p className="mb-4">
+          Kepala Dusun saat ini adalah Pak Sigit.
+        </p>
       </div>
 
       <Image

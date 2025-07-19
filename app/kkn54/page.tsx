@@ -1,44 +1,86 @@
-import Image from "next/image"
-import { Navigation } from "@/components/Navigation"
+// File: app/kkn54/page.tsx
 
+// 1. Impor komponen yang ingin Anda tampilkan
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { Navigation } from "@/components/Navigation"; // Pastikan path ini benar
 
-export default function KKN54() {
+// 2. Siapkan data yang dibutuhkan oleh komponen tersebut
+const testimonials = [
+  {
+    quote: "Edukasi Belajar Mengetik Kepada Anak Muda Menggunakan Media Game",
+    name: "Ekik",
+    designation: "Ketua Kelompok",
+    src: "/ekik.png",
+  },
+  {
+    quote: "Sosialisasi Pemanfaatan Kecerdasan Buatan (AI) dalam Aktivitas Sehari-hari dan Pembuatan Website",
+    name: "Eric",
+    designation: "Sekretaris",
+    src: "/eric.png",
+  },
+  {
+    quote: "Digitalisasi Profil Desa melalui Instagram untuk Pembuatan dan Pengelolaan Media Digital",
+    name: "Else",
+    designation: "Sekretaris",
+    src: "/else.png",
+  },
+    {
+    quote: "Manajemen Konten dan Promosi Digital untuk Sosialisasi Profil Desa melalui Instagram",
+    name: "Angel",
+    designation: "Bendahara",
+    src: "/angel.png",
+  },
+    {
+    quote: "Pemetaan Administrasi Wilayah, dan Potensi Pariwisata daerah padukuhan Plipir",
+    name: "Rendi",
+    designation: "Perkap",
+    src: "/rendi.png",
+  },
+    {
+    quote: "Pemeriksaan Kesehatan Dasar dan Edukasi Gaya Hidup Sehat bagi Warga Dusun Plipir",
+    name: "Chris",
+    designation: "Hubungan Manusia",
+    src: "/chris.png",
+  },
+    {
+    quote: "Sosialisasi Pemanfaatan Limbah Plastik Sebagai Bahan Ecobrick",
+    name: "Jelo",
+    designation: "Desain dan Dokumentasi",
+    src: "/jelo.png",
+  },
+    {
+    quote: "Desain Produk Visual Instagram untuk Sosialisasi Profil Desa Digital",
+    name: "Siska",
+    designation: "Desain dan Dokumentasi",
+    src: "/siska.png",
+  },
+    {
+    quote: "Papi dari Anak-anak KKN 54",
+    name: "Pak Peno",
+    designation: "Kepala Dusun Plipir Hingga Juli 2025",
+    src: "/pakpeno.png",
+  },
+];
+
+// 3. Buat komponen halaman dan ekspor sebagai default
+export default function Kkn54Page() {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12 text-foreground">
-    <Navigation />
-      <h1 className="text-4xl font-bold mb-6 text-green-700">Kegiatan KKN 54</h1>
+    // Gunakan div wrapper untuk seluruh halaman
+    <div className="w-full bg-white dark:bg-black min-h-screen">
+      
+      {/* PERBAIKAN: Komponen <Navigation /> ditempatkan di sini, di dalam return statement */}
+      <Navigation />
 
-      <div className="mb-6 text-lg leading-relaxed">
-        <p className="mb-4">
-          Kelompok Kuliah Kerja Nyata (KKN) 54 Universitas Kristen Duta Wacana hadir di Dusun Plipir sebagai bagian dari kontribusi mahasiswa dalam pembangunan masyarakat berbasis potensi lokal.
-        </p>
-        <p className="mb-4">
-          Kegiatan KKN berlangsung selama <strong>Juni - Juli 2025</strong>, dengan fokus utama pada pemberdayaan masyarakat, edukasi lingkungan, pengembangan pariwisata lokal, serta digitalisasi informasi dusun.
-        </p>
-        <p className="mb-4">
-          Program unggulan KKN 54 di Dusun Plipir meliputi:
-        </p>
-        <ul className="list-disc list-inside ml-2 mb-4">
-          <li>Pembuatan website profil dusun</li>
-          <li>Pelatihan pengelolaan sampah ecobrick</li>
-          <li>Pengenalan instagram</li>
-          <li>Pengenalan AI</li>
-          <li>Edukasi anak-anak tentang mengetik</li>
-          <li>Pengecekan kesehatan</li>
-          <li>Pembuatan mapping dusun</li>
-        </ul>
-        <p>
-          Semua kegiatan dilakukan dengan semangat kolaborasi bersama warga dusun, perangkat desa, dan pihak terkait lainnya.
-        </p>
-      </div>
+      {/* Konten utama halaman */}
+      <main>
+        <h2 className="pt-20 pb-10 text-center text-3xl font-bold text-black dark:text-white">
+          Anggota & Program Kerja KKN 54
+        </h2>
+        
+        {/* Gunakan komponen yang sudah diimpor */}
+        <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
+      </main>
 
-      <Image
-        src="/kkn54-dokumentasi.png"
-        alt="Kegiatan KKN 54 di Dusun Plipir"
-        width={800}
-        height={500}
-        className="rounded-2xl shadow-lg border border-border"
-      />
-    </main>
-  )
+    </div>
+  );
 }
