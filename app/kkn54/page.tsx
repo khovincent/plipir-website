@@ -78,7 +78,7 @@ export default function Kkn54Page() {
         </h2>
         
         {/* Gunakan komponen yang sudah diimpor */}
-        <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
+        <AnimatedTestimonials testimonials={testimonials} autoplay={false} />
       </main>
 
     </div>
