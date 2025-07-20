@@ -86,7 +86,7 @@ export default function TentangPage() {
           <section className="text-center mt-20 lg:mt-28">
             <div className="border-t border-gray-800 max-w-xl mx-auto pt-8">
               <p className="text-2xl italic text-gray-400" style={{ fontFamily: 'Cinzel, serif' }}>
-                "Menjaga Akar Tradisi, Meraih Puncak Prestasi."
+                “Menjaga Akar Tradisi, Meraih Puncak Prestasi.”
               </p>
             </div>
           </section>

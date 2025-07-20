@@ -1,6 +1,4 @@
 // File: app/sejarah/page.tsx
-
-import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 // Pastikan untuk menginstal react-icons: npm install react-icons
 import { FaLandmark, FaRoad, FaWater, FaLightbulb, FaMountain, FaUsers } from 'react-icons/fa';
