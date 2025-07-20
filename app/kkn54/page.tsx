@@ -13,7 +13,7 @@ const testimonials = [
     src: "/ekik.png",
   },
   {
-    quote: "Sosialisasi Pemanfaatan Kecerdasan Buatan (AI) dalam Aktivitas Sehari-hari dan Pembuatan Website",
+    quote: "Sosialisasi Pemanfaatan Kecerdasan Buatan (AI) dalam Aktivitas Sehari-hari dan Pembuatan Website Dusun Plipir",
     name: "Eric",
     designation: "Sekretaris",
     src: "/eric.png",

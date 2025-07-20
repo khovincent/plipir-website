@@ -9,6 +9,8 @@ import { Menu, X } from "lucide-react" // Mengimpor ikon
 const links = [
   { name: "Home", href: "/" },
   { name: "Tentang", href: "/tentang" },
+  { name: "Sejarah", href: "/sejarah" },
+  { name: "Ekonomi", href: "/ekonomi" },
   { name: "KKN 54", href: "/kkn54" },
   // Link Instagram dipisahkan karena merupakan link eksternal
 ];
