@@ -1,10 +1,12 @@
+// components/Navigation.tsx
+
 "use client"
 
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react" // Mengimpor ikon
+import { Menu, X } from "lucide-react"
 
 const links = [
   { name: "Home", href: "/" },
@@ -12,7 +14,6 @@ const links = [
   { name: "Sejarah", href: "/sejarah" },
   { name: "Ekonomi", href: "/ekonomi" },
   { name: "KKN 54", href: "/kkn54" },
-  // Link Instagram dipisahkan karena merupakan link eksternal
 ];
 
 const externalLink = { 
@@ -22,21 +23,20 @@ const externalLink = {
 
 export function Navigation() {
   const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false) // State untuk mengontrol menu mobile
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative w-full bg-black/80 backdrop-blur-sm border-b border-white/10 z-50">
+    // ===== PERUBAHAN DI SINI =====
+    <nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-sm border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Logo atau Nama Situs */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-white font-bold text-xl">
               Dusun Plipir
             </Link>
           </div>
 
-          {/* Navigasi untuk Desktop (tersembunyi di mobile) */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {links.map((link) => (
@@ -53,7 +53,6 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
-              {/* Link Eksternal */}
               <a
                 href={externalLink.href}
                 target="_blank"
@@ -65,7 +64,6 @@ export function Navigation() {
             </div>
           </div>
 
-          {/* Tombol Hamburger (hanya muncul di mobile) */}
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -81,7 +79,6 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Menu Mobile (muncul/hilang berdasarkan state 'isOpen') */}
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -89,7 +86,7 @@ export function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)} // Tutup menu saat link diklik
+                onClick={() => setIsOpen(false)}
                 className={cn(
                   "block px-3 py-2 rounded-md text-base font-medium",
                   pathname === link.href
@@ -100,7 +97,6 @@ export function Navigation() {
                 {link.name}
               </Link>
             ))}
-             {/* Link Eksternal untuk Mobile */}
              <a
               href={externalLink.href}
               target="_blank"

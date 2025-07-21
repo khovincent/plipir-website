@@ -41,7 +41,7 @@ export default function TentangPage() {
           <section className="text-center mb-16 lg:mb-24">
             <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Cinzel, serif' }}>Selamat Datang di Dusun Plipir</h2>
             <p className="text-lg max-w-3xl mx-auto text-gray-400 leading-relaxed">
-              Terletak di Desa Dersono, Kecamatan Pringkuku, Pacitan, Dusun Plipir bukan sekadar tempat, melainkan sebuah pengalaman. Temukan esensi kehidupan pedesaan yang harmonis di tengah pesona alam yang memukau.
+              Terletak di Desa Dersono, Kecamatan Pringkuku, Kabupaten Pacitan, Jawa Timur, Dusun Plipir bukan sekadar tempat, melainkan sebuah pengalaman. Temukan esensi kehidupan pedesaan yang harmonis di tengah pesona alam yang memukau.
             </p>
           </section>
 

@@ -8,12 +8,12 @@ export default function Sejarah() {
     {
       icon: <FaLandmark className="text-red-400" />,
       title: "Asal Usul & Lokasi",
-      text: "Dusun Plipir merupakan bagian dari Desa Bersono, Kecamatan Pringkuku, Kabupaten Pacitan. Terletak di bagian utara desa, dusun ini dikenal sebagai wilayah yang paling sulit dijangkau karena lokasinya yang terpencil dan berbatasan langsung dengan Dusun Sugihwaras.",
+      text: "Dusun Plipir merupakan bagian dari Desa Dersono, Kecamatan Pringkuku, Kabupaten Pacitan. Terletak di bagian utara desa, dusun ini dikenal sebagai wilayah yang paling sulit dijangkau karena lokasinya yang terpencil dan berbatasan langsung dengan Dusun Sugihwaras.",
     },
     {
       icon: <FaUsers className="text-blue-400" />,
       title: "Masa Pengungsian (1948)",
-      text: "Menurut cerita para sesepuh seperti <strong>Mbah Mustorejo</strong>, <strong>Mbah Katimun</strong>, <strong>Mbah Kasimun</strong>, dan <strong>Mbah Wakimin</strong>, wilayah ini menjadi tempat vital untuk pengungsian sekitar tahun 1948. Kantor kecamatan saat itu bahkan menumpang di rumah <strong>Mbah Ketikem</strong> di Dusun Sumur.",
+      text: "Menurut cerita para sesepuh seperti <strong>Mbah Mustorejo</strong>, <strong>Mbah Katimun</strong>, <strong>Mbah Kasimun</strong>, dan <strong>Mbah Wakimin</strong>, wilayah ini menjadi tempat vital untuk pengungsian sekitar tahun 1948. Posko saat itu bahkan menumpang di rumah <strong>Mbah Ketikem</strong> di Dusun Sumur dan rumah komando berada di rumah <strong>Mbah Kartojo</strong> Dokbalong.",
     },
     {
         icon: <FaMountain className="text-purple-400" />,
@@ -21,14 +21,14 @@ export default function Sejarah() {
         text: "Dusun Plipir berada di ketinggian sekitar 300 mdpl. Di kawasan Gunung Pak Pongko, pernah ditemukan gua dengan stupa beraksara Jepang. <strong>Mbah Sukimin</strong> dan <strong>Mbah Sukijan</strong> merupakan saksi hidup yang pernah diwawancarai oleh <strong>Pak Supeno</strong> mengenai sejarah dusun ini.",
     },
     {
-      icon: <FaWater className="text-cyan-400" />,
-      title: "Air Bersih Mulai Masuk (2004)",
-      text: "Sebelum tahun 2004, warga bergantung pada sumber air dari wilayah Dokbalong. Proyek air bersih yang terealisasi pada tahun ini menjadi sebuah lompatan besar bagi kualitas hidup masyarakat.",
+      icon: <FaRoad className="text-yellow-400" />,
+      title: "Akses Jalan Dibuka (2001)",
+      text: "Keterisolasian mulai terkikis saat akses jalan yang layak akhirnya dibuka pada tahun 2001, menghubungkan Dusun Plipir dengan wilayah lain secara lebih mudah.",
     },
     {
-      icon: <FaRoad className="text-yellow-400" />,
-      title: "Akses Jalan Dibuka (2005)",
-      text: "Keterisolasian mulai terkikis saat akses jalan yang layak akhirnya dibuka pada tahun 2005, menghubungkan Dusun Plipir dengan wilayah lain secara lebih mudah.",
+      icon: <FaWater className="text-cyan-400" />,
+      title: "Air Bersih Mulai Masuk (2005)",
+      text: "Sebelum tahun 2004, warga bergantung pada sumber air dari wilayah Dokbalong. Proyek air bersih yang terealisasi pada tahun ini menjadi sebuah lompatan besar bagi kualitas hidup masyarakat.",
     },
     {
       icon: <FaLightbulb className="text-green-400" />,
@@ -38,7 +38,7 @@ export default function Sejarah() {
   ];
 
   return (
-    <div className="bg-gray-950 text-gray-300 font-sans">
+    <div className="bg-black text-gray-300 font-sans">
       <Navigation />
 
       {/* Hero Section */}

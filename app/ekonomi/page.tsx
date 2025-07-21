@@ -11,7 +11,9 @@ import {
   GiChicken, 
   GiGoat, 
   GiCow,
-  GiFarmer
+  GiFarmer,
+  GiMonkey,
+  GiMushroom // Menambahkan ikon jamur
 } from 'react-icons/gi';
 import { FaTractor } from 'react-icons/fa';
 
@@ -23,7 +25,13 @@ export default function EkonomiPage() {
     { name: "Cabai", icon: <GiChiliPepper /> },
     { name: "Singkong", icon: <GiRootTip /> },
     { name: "Jagung", icon: <GiCorn /> },
-    { name: "Ubi", icon: <GiRootTip /> }, // Menggunakan ikon yang sama untuk umbi-umbian
+    { name: "Ubi", icon: <GiRootTip /> }, 
+  ];
+
+  // Mengubah nama variabel dan menambahkan jamur
+  const pests = [
+    { name: "Monyet", icon: <GiMonkey /> },
+    { name: "Jamur", icon: <GiMushroom /> },
   ];
 
   const livestock = [
@@ -39,7 +47,6 @@ export default function EkonomiPage() {
       {/* Hero Section */}
       <header className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
-        {/* Ganti 'ladang-petani.png' dengan gambar relevan dari folder /public Anda */}
         <Image
             src="/ladang-petani.png" 
             alt="Ladang petani di Dusun Plipir"
@@ -61,7 +68,6 @@ export default function EkonomiPage() {
       <main className="bg-black py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-          {/* Introduction Section */}
           <section className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Cinzel, serif' }}>Pekerja Keras Penjaga Tradisi</h2>
             <p className="text-lg text-gray-400 leading-relaxed">
@@ -69,7 +75,6 @@ export default function EkonomiPage() {
             </p>
           </section>
 
-          {/* Economic Pillars Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
             {/* Section 1: Pertanian */}
@@ -79,8 +84,10 @@ export default function EkonomiPage() {
                 <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Cinzel, serif' }}>Sang Penjaga Bumi</h3>
               </div>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Pertanian adalah tulang punggung utama ekonomi dusun. Para petani dengan gigih mengolah lahan untuk menanam berbagai komoditas yang menjadi sumber penghasilan pokok keluarga.
+                Pertanian adalah tulang punggung utama ekonomi dusun. Para petani dengan gigih mengolah lahan untuk menanam berbagai komoditas yang menjadi sumber penghasilan pokok keluarga. Namun terdapat tantangan besar seperti hama monyet dan jamur yang merusak tanaman.  
               </p>
+              
+              {/* Hasil Panen */}
               <h4 className="text-xl font-semibold text-white mb-4">Hasil Utama Ladang:</h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {crops.map((crop) => (
@@ -90,6 +97,21 @@ export default function EkonomiPage() {
                   </div>
                 ))}
               </div>
+
+              {/* ===== BAGIAN BARU: TANTANGAN & HAMA ===== */}
+              <div className="mt-12">
+                <h4 className="text-xl font-semibold text-white mb-4">Tantangan & Hama</h4>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {pests.map((pest) => (
+                    <div key={pest.name} className="bg-gray-800 p-4 rounded-lg flex flex-col items-center justify-center text-center hover:bg-red-400/10 transition-colors duration-300">
+                      <span className="text-4xl text-red-400 mb-2">{pest.icon}</span>
+                      <span className="font-semibold text-gray-200">{pest.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* ===== AKHIR BAGIAN BARU ===== */}
+
             </section>
 
             {/* Section 2: Peternakan */}
