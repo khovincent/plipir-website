@@ -1,6 +1,6 @@
 # Website Resmi Dusun Plipir
 
-[![Deploy with Vercel](https://plipir-website.vercel.app)](https://github.com/khovincent/plipir-website.com%2FURL_REPO_GITHUB_ANDA)
+[![Deploy with Vercel](https://plipir-website.vercel.app)](https://github.com/khovincent/plipir-website.com)
 
 Sebuah situs web modern dan informatif yang dibangun menggunakan Next.js dan Tailwind CSS untuk menampilkan profil, sejarah, potensi, dan kegiatan Dusun Plipir, Desa Bersono, Pacitan.
 

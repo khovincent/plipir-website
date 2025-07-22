@@ -1,34 +1,78 @@
 // File: app/ekonomi/page.tsx
 
-import Image from "next/image";
+"use client"; 
+
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
-// Pastikan untuk menginstal react-icons: npm install react-icons
+import { motion, AnimatePresence } from "framer-motion";
 import { 
-  GiWheat, 
-  GiChiliPepper, 
-  GiRootTip, 
-  GiCorn, 
-  GiChicken, 
-  GiGoat, 
-  GiCow,
-  GiFarmer,
-  GiMonkey,
-  GiMushroom // Menambahkan ikon jamur
+  GiWheat, GiChiliPepper, GiRootTip, GiCorn, 
+  GiChicken, GiGoat, GiCow, GiFarmer, GiMonkey, GiMushroom, GiPeas 
 } from 'react-icons/gi';
 import { FaTractor } from 'react-icons/fa';
 
-
 export default function EkonomiPage() {
+  const [selectedCrop, setSelectedCrop] = useState<string | null>(null);
 
   const crops = [
-    { name: "Padi", icon: <GiWheat /> },
-    { name: "Cabai", icon: <GiChiliPepper /> },
-    { name: "Singkong", icon: <GiRootTip /> },
-    { name: "Jagung", icon: <GiCorn /> },
-    { name: "Ubi", icon: <GiRootTip /> }, 
+    { 
+      name: "Padi", 
+      icon: <GiWheat />,
+      details: {
+        frequency: "1x per tahun",
+        yield: "~270 karung",
+        weight: "Min. 25 kg / karung"
+      }
+    },
+    { 
+      name: "Jagung", 
+      icon: <GiCorn />,
+      details: {
+        frequency: "1x per tahun",
+        yield: "~54 karung",
+        weight: "25-30 kg / karung"
+      }
+    },
+    { 
+      name: "Cabai", 
+      icon: <GiChiliPepper />,
+      details: {
+        frequency: "Setiap 10 hari (selama 1 tahun)",
+        yield: "10-20 karung / 10 hari",
+        weight: "~30 kg / karung"
+      }
+    },
+    { 
+      name: "Singkong", 
+      icon: <GiRootTip />,
+      details: {
+        frequency: "1x per tahun",
+        yield: "~27 karung (kering)",
+        weight: "30-40 kg / karung"
+      }
+    },
+    { 
+      name: "Jahe & Kunyit", 
+      icon: <GiRootTip />,
+      details: {
+        frequency: "1x per tahun",
+        yield: "~25 karung",
+        weight: "50 kg / karung"
+      }
+    },
+    { 
+      name: "Kencur", 
+      icon: <GiRootTip />,
+      details: {
+        frequency: "1x per 3 tahun",
+        yield: "~25 karung (kering)",
+        weight: "25-30 kg / karung"
+      }
+    },
+    { name: "Pete", icon: <GiPeas />, details: null },
+    { name: "Ubi", icon: <GiRootTip />, details: null },
   ];
 
-  // Mengubah nama variabel dan menambahkan jamur
   const pests = [
     { name: "Monyet", icon: <GiMonkey /> },
     { name: "Jamur", icon: <GiMushroom /> },
@@ -41,80 +85,91 @@ export default function EkonomiPage() {
   ];
 
   return (
-    <div className="bg-gray-950 text-gray-300 font-sans">
+    <div className="bg-black text-gray-300 font-sans">
       <Navigation />
 
-      {/* Hero Section */}
-      <header className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
-        <Image
-            src="/ladang-petani.png" 
-            alt="Ladang petani di Dusun Plipir"
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
-        />
-        <div className="z-20 p-8">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white" style={{ fontFamily: 'Cinzel, serif', letterSpacing: '0.1em' }}>
+      {/* ===== PERUBAHAN DI SINI: HERO SECTION TANPA GAMBAR LATAR ===== */}
+      <header className="w-full h-[60vh] bg-black flex items-center justify-center text-center">
+        <div className="p-8">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white" style={{ fontFamily: 'Cinzel, serif', letterSpacing: '0.1em' }}>
             Denyut Nadi Plipir
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mt-4 max-w-2xl mx-auto">
-            Kisah ketekunan para petani dan peternak yang menghidupi dusun dari kemurahan alam.
+            Kisah ketekunan warga yang menghidupi dusun dari kemurahan alam.
           </p>
         </div>
       </header>
+      {/* ============================================================= */}
 
-      {/* Main Content */}
-      <main className="bg-black py-20 lg:py-28">
+      <main className="bg-gray-950 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
           <section className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Cinzel, serif' }}>Pekerja Keras Penjaga Tradisi</h2>
             <p className="text-lg text-gray-400 leading-relaxed">
-              Mayoritas warga Dusun Plipir menggantungkan hidupnya pada tanah dan ternak. Setiap pagi, langkah kaki mereka menyusuri jalan setapak menuju ladang, sementara suara ternak menjadi alunan musik kehidupan. Inilah cerminan kerja keras dan harmoni dengan alam.
+              Mayoritas warga Dusun Plipir adalah petani dan peternak. Mereka menggantungkan hidup pada tanah, ternak, dan harmoni dengan alam.
             </p>
           </section>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
-            {/* Section 1: Pertanian */}
             <section className="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-5xl text-green-400"><FaTractor /></span>
                 <h3 className="text-3xl font-bold text-white" style={{ fontFamily: 'Cinzel, serif' }}>Sang Penjaga Bumi</h3>
               </div>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Pertanian adalah tulang punggung utama ekonomi dusun. Para petani dengan gigih mengolah lahan untuk menanam berbagai komoditas yang menjadi sumber penghasilan pokok keluarga. Namun terdapat tantangan besar seperti hama monyet dan jamur yang merusak tanaman.  
+                Pertanian adalah tulang punggung ekonomi. Klik pada setiap hasil panen di bawah ini untuk melihat detail estimasi panennya.
+                Namun terdapat tantangan seperti hama monyet dan jamur yang mengancam hasil panen.
               </p>
               
-              {/* Hasil Panen */}
               <h4 className="text-xl font-semibold text-white mb-4">Hasil Utama Ladang:</h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {crops.map((crop) => (
-                  <div key={crop.name} className="bg-gray-800 p-4 rounded-lg flex flex-col items-center justify-center text-center hover:bg-green-400/10 transition-colors duration-300">
+                  <motion.div
+                    key={crop.name}
+                    layout
+                    onClick={() => crop.details && setSelectedCrop(selectedCrop === crop.name ? null : crop.name)}
+                    className={`p-4 rounded-lg flex flex-col items-center justify-start text-center transition-colors duration-300 ${crop.details ? 'cursor-pointer bg-gray-800 hover:bg-green-400/10' : 'bg-gray-800/50'}`}
+                  >
                     <span className="text-4xl text-green-400 mb-2">{crop.icon}</span>
                     <span className="font-semibold text-gray-200">{crop.name}</span>
-                  </div>
+                    
+                    <AnimatePresence>
+                      {selectedCrop === crop.name && crop.details && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="w-full overflow-hidden text-left mt-4"
+                        >
+                          <div className="border-t border-gray-700 pt-3 text-xs space-y-1">
+                            <p><strong className="font-semibold text-gray-300">Frekuensi:</strong> <span className="text-gray-400">{crop.details.frequency}</span></p>
+                            <p><strong className="font-semibold text-gray-300">Perkiraan:</strong> <span className="text-gray-400">{crop.details.yield}</span></p>
+                            <p><strong className="font-semibold text-gray-300">Bobot:</strong> <span className="text-gray-400">{crop.details.weight}</span></p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
                 ))}
               </div>
 
-              {/* ===== BAGIAN BARU: TANTANGAN & HAMA ===== */}
               <div className="mt-12">
                 <h4 className="text-xl font-semibold text-white mb-4">Tantangan & Hama</h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {pests.map((pest) => (
-                    <div key={pest.name} className="bg-gray-800 p-4 rounded-lg flex flex-col items-center justify-center text-center hover:bg-red-400/10 transition-colors duration-300">
+                    <div key={pest.name} className="bg-gray-800 p-4 rounded-lg flex flex-col items-center justify-center text-center">
                       <span className="text-4xl text-red-400 mb-2">{pest.icon}</span>
                       <span className="font-semibold text-gray-200">{pest.name}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              {/* ===== AKHIR BAGIAN BARU ===== */}
 
             </section>
 
-            {/* Section 2: Peternakan */}
             <section className="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-5xl text-yellow-400"><GiFarmer /></span>
@@ -126,14 +181,13 @@ export default function EkonomiPage() {
               <h4 className="text-xl font-semibold text-white mb-4">Ternak Warga:</h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {livestock.map((animal) => (
-                  <div key={animal.name} className="bg-gray-800 p-4 rounded-lg flex flex-col items-center justify-center text-center hover:bg-yellow-400/10 transition-colors duration-300">
+                  <div key={animal.name} className="bg-gray-800 p-4 rounded-lg flex flex-col items-center justify-center text-center">
                     <span className="text-4xl text-yellow-400 mb-2">{animal.icon}</span>
                     <span className="font-semibold text-gray-200">{animal.name}</span>
                   </div>
                 ))}
               </div>
             </section>
-
           </div>
         </div>
       </main>

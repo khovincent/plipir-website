@@ -8,12 +8,14 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 
+// di file components/Navigation.tsx
 const links = [
   { name: "Home", href: "/" },
   { name: "Tentang", href: "/tentang" },
   { name: "Sejarah", href: "/sejarah" },
   { name: "Ekonomi", href: "/ekonomi" },
   { name: "KKN 54", href: "/kkn54" },
+  { name: "Kontak", href: "/kontak" }, // <-- TAMBAHKAN INI
 ];
 
 const externalLink = { 
